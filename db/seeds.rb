@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+@user = User.create(name: 'user', email: 'user@example.com', password: '123456')
+
+@category = Category.create(user: @user, name: 'category', icon: 'icon')
+@operation = Operation.create(author: @user, name: 'operation', amount: 100)
+
+@operation_categories = OperationCategory.create(operation: @operation, category: @category)
