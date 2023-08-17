@@ -1,48 +1,32 @@
 class OperationsController < ApplicationController
-  before_action :set_operation, only: %i[show edit update destroy]
-
-  def index
-    @operations = Operation.all
-  end
-
-  def show; end
-
   def new
     @operation = Operation.new
   end
 
-  def edit; end
-
   def create
+    @category = Category.find(params[:operation][:category_id])
     @operation = Operation.new(operation_params)
+    @operation.author = current_user
+
+    @operation_category = OperationCategory.new
+    @operation_category.category = @category
+    @operation_category.operation = @operation
+    @operation_category.save
 
     if @operation.save
-      redirect_to operation_url(@operation), notice: 'Operation was successfully created.'
+      redirect_to category_path(@category), notice: 'Operation was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def update
-    if @operation.update(operation_params)
-      redirect_to operation_url(@operation), notice: 'Operation was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @operation.destroy
-    redirect_to operations_url, notice: 'Operation was successfully destroyed.'
-  end
-
   private
 
-  def set_operation
-    @operation = Operation.find(params[:id])
+  def operation_params
+    params.require(:operation).permit(:name, :amount)
   end
 
-  def operation_params
-    params.fetch(:operation, {})
+  def category_params
+    params.require(:category).permit(:id)
   end
 end

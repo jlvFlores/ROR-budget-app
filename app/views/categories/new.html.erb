@@ -1,9 +1,27 @@
-<h1>New category</h1>
+<%= form_with(model: @category) do |f| %>
+  <% if @category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-<%= render "form", category: @category %>
+      <ul>
+        <% @category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<br>
+  <div class="field-cont">
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Name", required: true %>
+    </div>
 
-<div>
-  <%= link_to "Back to categories", categories_path %>
-</div>
+    <div class="field">
+      <%= f.text_field :icon, placeholder: "Icon url", required: true %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit "Save", class: "btn" %>
+  </div>
+<% end %>
