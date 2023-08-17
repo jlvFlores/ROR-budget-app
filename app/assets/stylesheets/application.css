@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @font-face {
+@font-face {
   font-family: 'metropolis-bold';
   src: url('/assets/metropolis.bold.otf');
   font-family: 'metropolis-light';
@@ -49,7 +49,7 @@ a {
 
 nav {
   background-color: var(--main-color);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   color: var(--light-one);
   display: flex;
   justify-content: space-between;
@@ -64,6 +64,20 @@ h1,
   color: var(--light-one);
 }
 
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--light-two);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--light-one);
+  font-size: 1.125rem;
+}
+
 .side-menu {
   position: fixed;
   top: 0;
@@ -74,7 +88,7 @@ h1,
   flex-direction: column;
   align-items: center;
   background-color: var(--main-color);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: left 0.3s;
   z-index: 100;
 }
@@ -91,13 +105,6 @@ h1,
 
 .side-menu.open {
   left: 0;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid var(--light-two);
 }
 
 main {
@@ -123,7 +130,7 @@ section {
 .transaction-box {
   background-color: var(--light-one);
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 1fr 4fr 1fr;
@@ -186,13 +193,6 @@ svg {
   height: 35px;
 }
 
-button {
-  background-color: transparent;
-  border: none;
-  color: var(--light-one);
-  font-size: 1.125rem;
-}
-
 #splash-screen {
   display: flex;
   flex-direction: column;
@@ -235,7 +235,7 @@ button {
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: var(--text-color-two);
 }
 
@@ -250,7 +250,7 @@ select {
   left: 0;
   width: calc(100% - 2rem);
   background-color: var(--light-one);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;

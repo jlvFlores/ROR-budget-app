@@ -2,12 +2,12 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
 
   def index
-    @page_title = "Home"
+    @page_title = 'Home'
     @categories = Category.where(user: current_user).all
   end
 
   def show
-    @page_title = "Transactions"
+    @page_title = 'Transactions'
     @category = Category.find(params[:id])
     @operations = @category.operations
   end
