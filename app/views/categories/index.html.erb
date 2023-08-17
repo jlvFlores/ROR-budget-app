@@ -1,0 +1,21 @@
+<section id="categories">
+  <% if @categories.any? %>
+    <% @categories.each do |category| %>
+      <%= link_to category do %>
+        <div class="category-box">
+          <img src="<%= category.icon %>" alt="<%= category.name %>">
+          <div class="info-cont">
+            <p class="info"><%= category.name %></p>
+            <p class="info"><%= category.updated_at.strftime('%d %b %Y') %></p>
+          </div>
+          <p class="total"><%= category.operations.sum(:amount) %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>Oh no its empty</p>
+  <% end %>
+
+</section>
+
+<%= render "shared/big_btn", path: new_category_path, text: "Add category" %>

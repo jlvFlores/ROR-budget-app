@@ -1,0 +1,20 @@
+<section id="transactions">
+  <% if @operations.any? %>
+    <div class="total-box">
+      <p class="info">Total</p>
+      <p class="total"><%= @operations.sum(:amount) %></p>
+    </div>
+
+    <% @operations.each do |operation| %>
+      <div class="transaction-box">
+        <p class="info"><%= operation.updated_at.strftime('%d %b %Y') %></p>
+        <p class="info"><%= operation.name %></p>
+        <p class="total"><%= operation.amount %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Oh no its empty</p>
+  <% end %>
+</section>
+
+<%= render "shared/big_btn", path: new_category_operation_path(@category), text: "Add transaction" %>

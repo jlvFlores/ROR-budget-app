@@ -1,0 +1,27 @@
+main {
+  padding: 0;
+}
+
+.field-cont {
+  margin: 1rem 0;
+}
+
+input:not([type="submit"]) {
+  border: none;
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.actions input {
+  background-color: transparent;
+  border: none;
+  color: var(--light-one);
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.shared-links {
+  display: flex;
+  justify-content: center;
+}

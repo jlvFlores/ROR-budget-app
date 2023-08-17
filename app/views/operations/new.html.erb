@@ -1,0 +1,31 @@
+<%= form_with(model: @operation, url: category_operations_path(params[:category_id])) do |f| %>
+  <% if @operation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+
+      <ul>
+        <% @operation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field-cont">
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Name", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.number_field :amount, min: 0.01, placeholder: "Amount", step: "any", required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.collection_select :category_id, Category.where(user: current_user).all, :id, :name, { selected: params[:category_id] } %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit "Save", class: "btn" %>
+  </div>
+<% end %>
