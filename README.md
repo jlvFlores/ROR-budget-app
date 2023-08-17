@@ -31,7 +31,7 @@ The RoR budget app is a mobile web application where you can manage your budget:
 
 # 📖 RoR-budget-app <a name="about-project"></a>
 
-The **RoR-budget-app** will allow users to register and log in, so that the data is private to them, introduce new transactions associated with a category and see the money spent on each category.
+The **RoR-budget-app** allows users to register and log in, so that the data is private to them, introduce new transactions associated with a category and see the money spent on each category. Here is a [video](https://www.loom.com/share/27aaafc6cdb04841b97d97e3728401eb) of me explaining the app in action.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -40,9 +40,17 @@ The **RoR-budget-app** will allow users to register and log in, so that the data
 <details>
 <summary>Server</summary>
   <ul>
-    <li>Netlify<a href="">Budget app</a></li>
+    <li>Deployed on Render <a href="https://rails-ny91.onrender.com/">Budget app</a></li>
   </ul>
 </details>
+
+<details>
+<summary>Franwork</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+  </ul>
+</details>
+
 
 <!-- Features -->
 
@@ -148,8 +156,8 @@ And lastly, run this command to see the project in in your browser.
 
 > The following are the future features that will be added to the project.
 
-- [ ] **Home, transactions pages**
-- [ ] **Intergratrion test**
+- [ ] **Add more navigational options to the side menu**
+- [ ] **Add functionality to the search icon**
 - [ ] **It will probably not take over the world**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -177,6 +185,8 @@ If you like this project you can give me a hand by recommending me to potential 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank those who have motivated me to keep on fighting despite how tough the journey may become.
+
+**I'd also like to mention [Gregoire Vella](https://www.behance.net/gregoirevella) and his [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) from which I took inspiration for this project.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
