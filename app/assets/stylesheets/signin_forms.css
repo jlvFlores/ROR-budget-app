@@ -18,6 +18,7 @@ input:not([type="submit"]) {
   border: none;
   color: var(--light-one);
   font-size: 1.125rem;
+  cursor: pointer;
 }
 
 .shared-links {
