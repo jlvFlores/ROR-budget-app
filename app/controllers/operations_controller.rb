@@ -1,5 +1,6 @@
 class OperationsController < ApplicationController
   def new
+    @page_title = 'New transaction'
     @operation = Operation.new
   end
 
